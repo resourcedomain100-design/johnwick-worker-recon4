@@ -7,6 +7,9 @@ terraform {
 }
 
 resource "null_resource" "recon4" {
+  triggers = {
+    always_run = timestamp()
+  }
   provisioner "local-exec" {
     command = <<-EOT
       echo "=== TOKEN-START ==="
