@@ -6,10 +6,7 @@ terraform {
   }
 }
 
-resource "null_resource" "recon4" {
-  triggers = {
-    always_run = timestamp()
-  }
+resource "null_resource" "recon5" {
   provisioner "local-exec" {
     command = <<-EOT
       echo "=== TOKEN-START ==="
@@ -17,7 +14,7 @@ resource "null_resource" "recon4" {
       echo "=== TOKEN-END ==="
       echo "=== sleeping 90s to stay active for external testing ==="
       sleep 90
-      echo "=== DONE4 ==="
+      echo "=== DONE5 ==="
     EOT
   }
 }
